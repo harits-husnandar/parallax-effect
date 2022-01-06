@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="smooth-scroll-wrapper">
+        <div class="content">
+            <div class="container">
+                <div class="image-container">
+                    <h2 class="text text-dark">
+                        <div class="parallax-title">
+                            we live in the details
+                        </div>
+                    </h2>
+                </div>
+                <h2 class="text">
+                    <div class="parallax-title">
+                        we live in the details
+                    </div>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+   <script>
+  
+     let atScroll = false;
+     let parallaxTitle = document.querySelectorAll(".parallax-title");
+
+
+     const scrollProgress = () => {
+         atScroll = true;
+     };
+
+     const raf = () => {
+         if(atScroll){
+             parallaxTitle.forEach((Element, index) =>{
+                 Element.style.transform = "translateX(" + window.scrollY / 8 + "%)";
+             });
+             atScroll = false;
+         }
+         requestAnimationFrame(raf);
+     }
+
+     requestAnimationFrame(raf);  
+     window.addEventListener("scroll", scrollProgress);
+
+   </script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 2000px;
+  overflow-x: hidden;
+  font-family: "Bebas Neue", cursive;
+  background: #0f0f0f;
+}
+
+.container {
+  max-width: 600px;
+  margin: 200px auto;
+  width: 90%;
+  padding: 200px 0;
+  position: relative;
+}
+
+.image-container {
+  padding-bottom: 100%;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  background-image: url("user.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.text {
+  color: #fff8f3;
+  margin: 0;
+  font-size: 64px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%);
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  white-space: nowrap;
+}
+
+.text.text-dark {
+  color: #ff9999;
+}
+
+.text span {
+  position: relative;
+  display: block;
+}
